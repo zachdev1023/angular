@@ -12,6 +12,7 @@ import { DatePipe } from '@angular/common';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
+import { AddHeroComponent } from './components/add-hero/add-hero.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { InMemoryDataService } from './services/in-memory-data.service';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
+    AddHeroComponent,
   ],
   imports: [
     BrowserModule,
