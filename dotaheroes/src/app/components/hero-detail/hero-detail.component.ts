@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from 'src/app/interface/hero'; 
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { DatePipe, Location } from '@angular/common';
 import { HeroService } from 'src/app/services/hero.service';
 import { MessageService } from 'src/app/services/message.service';
 
@@ -19,8 +19,11 @@ export class HeroDetailComponent implements OnInit {
     private route:ActivatedRoute,
     private location:Location,
     private heroService:HeroService,
-    private messageService:MessageService
+    private messageService:MessageService,
+    private datePipe:DatePipe
   ) { }
+
+  logDate = this.datePipe.transform(new Date(), 'yyyy-MM-dd HH:mm:ss');
 
   ngOnInit(): void {
     this.getHero();
@@ -29,11 +32,17 @@ export class HeroDetailComponent implements OnInit {
   getHero():void{
     const id = Number (this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(id).subscribe(hero => this.hero = hero);
-    this.messageService.add(`Currently viewing details for ${this.hero.name}`)
   }
 
   goBack():void {
     this.location.back();
+  }
+
+  updateName(): void {
+    if (this.hero) {
+      this.heroService.updateName(this.hero)
+        .subscribe(() => this.goBack())
+    }
   }
 
 }

@@ -8,7 +8,10 @@ import { HeroDetailComponent } from './components/hero-detail/hero-detail.compon
 import { MessagesComponent } from './components/messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { LogsComponent } from './components/logs/logs.component';
+import { DatePipe } from '@angular/common';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -17,15 +20,19 @@ import { LogsComponent } from './components/logs/logs.component';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    LogsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     NgFor,
     AppRoutingModule,
+    DatePipe,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

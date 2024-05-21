@@ -5,3 +5,7 @@
         <br>{{message}}
     </div>
 </div>
+
+<div *ngIf="messageService.messages.length === 0">
+    <p>No Logs found!</p>
+</div>

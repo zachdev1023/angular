@@ -3,7 +3,7 @@
     <h2>ID #{{hero.id}} : {{hero.name}}</h2>
     <label for="changeName">Change Name : </label>
         <input id="changeName" type="text" [(ngModel)]="hero.name" placeholder="name"> 
-        
+        <button (click)="updateName()">Update</button>
          <ul><br>
             <li>Description: <p>{{hero.description}}</p></li>
             <li>Background: <p>{{hero.background}}</p></li>
