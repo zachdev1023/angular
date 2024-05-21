@@ -1,0 +1,12 @@
+span{
+    padding: 1rem;
+    &:hover{
+        cursor: pointer;
+        color: #ababab;
+    }
+}
+
+.selected {
+    cursor: pointer;
+    color: #ababab;
+}

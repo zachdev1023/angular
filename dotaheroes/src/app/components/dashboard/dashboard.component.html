@@ -1,0 +1,9 @@
+<div>
+    <h2>Heroes</h2>
+    <ol>
+        <li *ngFor="let hero of heroes" routerLink="/herodetail/{{hero.id}}">
+            <span>{{hero.name | uppercase}}</span><br><br>
+        </li>
+    </ol>
+</div>
+

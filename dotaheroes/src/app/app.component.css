@@ -293,3 +293,7 @@
       visibility: hidden;
     }
   }
+
+  nav a {
+    padding-right: 1rem;
+  }

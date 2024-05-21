@@ -1,0 +1,35 @@
+Here's a concise to-do list for the Angular "Tour of Heroes" tutorial:
+
+Setup the Development Environment
+
+Install Node.js and npm.
+Install the Angular CLI.
+Create a New Angular Project
+
+Use Angular CLI to generate a new project.
+Serve the Application
+
+Run the development server.
+Create the Heroes Component
+
+Generate a new component.
+Display a list of heroes.
+Add Navigation
+
+Create the dashboard.
+Implement routing.
+Create Feature Components
+
+Create the hero detail component.
+Add CSS styles.
+Add Services
+
+Create a hero service.
+Use HTTP to fetch data.
+Add In-App Navigation
+
+Set up Angular's routing.
+Get Data from a Server
+
+Simulate data service with in-memory web API.
+Use HTTP client to retrieve data.

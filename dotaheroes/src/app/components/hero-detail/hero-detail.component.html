@@ -1,12 +1,13 @@
-<div class="content" *ngIf="selectedHero">
-    <h2>{{selectedHero.name}}</h2>
+<div class="content" *ngIf="hero">
+    <button (click)="goBack()">Back</button>
+    <h2>ID #{{hero.id}} : {{hero.name}}</h2>
     <label for="changeName">Change Name : </label>
-        <input id="changeName" type="text" [(ngModel)]="selectedHero.name" placeholder="name"> 
+        <input id="changeName" type="text" [(ngModel)]="hero.name" placeholder="name"> 
         
          <ul><br>
-            <li>Description: <p>{{selectedHero.description}}</p></li>
-            <li>Background: <p>{{selectedHero.background}}</p></li>
-            <li>Abilities: <p>{{selectedHero.abilities}}</p></li>
-            <li>Primary Attribute: <p>{{selectedHero.primaryAttribute}}</p></li>
+            <li>Description: <p>{{hero.description}}</p></li>
+            <li>Background: <p>{{hero.background}}</p></li>
+            <li>Abilities: <p>{{hero.abilities}}</p></li>
+            <li>Primary Attribute: <p>{{hero.primaryAttribute}}</p></li>
         </ul>
   </div>
